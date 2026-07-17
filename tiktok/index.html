@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok-Login — cook.vision</title>
+<style>
+  :root { --bg-top:#1e150e; --bg-bottom:#0d0906; --accent:#eb9632; --text:#f6f0e7; --muted:#a08c76; --card:#241708; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--text);
+    background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-bottom) 100%); background-attachment:fixed;
+    min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; }
+  .wrap { max-width:620px; width:100%; text-align:center; }
+  .kicker { letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-size:13px; margin-bottom:12px; }
+  h1 { font-size:clamp(26px,5vw,38px); letter-spacing:1px; margin-bottom:10px; }
+  h1 .accent { color:var(--accent); }
+  p { color:#e7ddce; font-size:16px; margin:8px 0; }
+  .muted { color:var(--muted); font-size:14px; }
+  .card { background:var(--card); border:1px solid rgba(235,150,50,.25); border-radius:16px; padding:26px 24px; margin-top:26px; }
+  .label { text-transform:uppercase; letter-spacing:2px; font-size:12px; color:var(--accent); margin-bottom:12px; }
+  .code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:15px; word-break:break-all;
+    background:#160f08; border:1px solid rgba(235,150,50,.22); border-radius:10px; padding:16px; color:var(--text); }
+  button { margin-top:16px; background:var(--accent); color:#1a1108; font-weight:700; border:none;
+    padding:13px 30px; border-radius:999px; font-size:15px; cursor:pointer; }
+  button:active { transform:translatey(1px); }
+  .ok { color:#7fd18a; } .err { color:#f0846f; }
+  .big { font-size:52px; margin-bottom:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">cook.vision</div>
+  <h1>TikTok-<span class="accent">Login</span></h1>
+  <div id="content"></div>
+</div>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var code = params.get("code");
+  var error = params.get("error") || params.get("error_description");
+  var box = document.getElementById("content");
+
+  if (code) {
+    box.innerHTML =
+      '<div class="big ok">&#10003;</div>' +
+      '<p>Login erfolgreich. Kopiere diesen Code und f&uuml;ge ihn dort ein, wo du danach gefragt wirst:</p>' +
+      '<div class="card"><div class="label">Authorization Code</div>' +
+      '<div class="code" id="code">' + code.replace(/</g,"&lt;") + '</div>' +
+      '<button id="copy">Code kopieren</button></div>' +
+      '<p class="muted">Der Code ist nur wenige Minuten g&uuml;ltig und nur einmal verwendbar.</p>';
+    document.getElementById("copy").onclick = function () {
+      navigator.clipboard.writeText(code).then(function () {
+        document.getElementById("copy").textContent = "Kopiert ✓";
+      });
+    };
+  } else if (error) {
+    box.innerHTML =
+      '<div class="big err">&#10005;</div>' +
+      '<p>Login abgebrochen oder fehlgeschlagen:</p>' +
+      '<div class="card"><div class="code">' + error.replace(/</g,"&lt;") + '</div></div>' +
+      '<p class="muted">Bitte den Login erneut starten.</p>';
+  } else {
+    box.innerHTML =
+      '<p>Diese Seite empf&auml;ngt den TikTok-Login der App <strong>cook.vision Auto-Poster</strong>.</p>' +
+      '<p class="muted">Es wurde kein Login-Code &uuml;bergeben. &Ouml;ffne den Login &uuml;ber den bereitgestellten Link.</p>';
+  }
+</script>
+</body>
+</html>
