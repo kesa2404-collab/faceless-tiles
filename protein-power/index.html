@@ -34,7 +34,9 @@
   h2 .accent { color: var(--accent); }
   .lede { color: #d9cbb8; max-width: 560px; margin-bottom: 32px; }
   .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-  .recipe-card { background: var(--card); border-radius: 10px; padding: 20px; border: 1px solid #3a2c1e; }
+  .recipe-card { background: var(--card); border-radius: 10px; overflow: hidden; border: 1px solid #3a2c1e; }
+  .recipe-card img { width: 100%; height: 150px; object-fit: cover; display: block; }
+  .recipe-card .body { padding: 16px; }
   .recipe-card h3 { font-size: 16px; margin-bottom: 6px; color: var(--accent); }
   .recipe-card p { font-size: 13px; color: var(--muted); }
   .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 8px; }
@@ -85,16 +87,25 @@
   und ein Pro-Tipp, der den Unterschied macht.</p>
   <div class="recipe-grid">
     <div class="recipe-card">
-      <h3>Lachs aus dem Ofen mit Zitronen-Kruste</h3>
-      <p>Ein Blech, 15 Minuten, viel Protein — das unkomplizierteste Feierabend-Dinner.</p>
+      <img src="images/06_01.jpg" alt="Lachs aus dem Ofen mit Zitronen-Kruste">
+      <div class="body">
+        <h3>Lachs aus dem Ofen mit Zitronen-Kruste</h3>
+        <p>Ein Blech, 15 Minuten, viel Protein — das unkomplizierteste Feierabend-Dinner.</p>
+      </div>
     </div>
     <div class="recipe-card">
-      <h3>Die knusprige Protein-Chicken-Panade</h3>
-      <p>So knusprig wie frittiert — nur aus dem Ofen, mit deutlich mehr Protein.</p>
+      <img src="images/04_01.jpg" alt="Die knusprige Protein-Chicken-Panade">
+      <div class="body">
+        <h3>Die knusprige Protein-Chicken-Panade</h3>
+        <p>So knusprig wie frittiert — nur aus dem Ofen, mit deutlich mehr Protein.</p>
+      </div>
     </div>
     <div class="recipe-card">
-      <h3>Skyr-Cheesecake ohne Backen</h3>
-      <p>Cremig wie Cheesecake, aber fast nur Protein und kaum Zucker.</p>
+      <img src="images/10_01.jpg" alt="Skyr-Cheesecake ohne Backen">
+      <div class="body">
+        <h3>Skyr-Cheesecake ohne Backen</h3>
+        <p>Cremig wie Cheesecake, aber fast nur Protein und kaum Zucker.</p>
+      </div>
     </div>
   </div>
 </section>
