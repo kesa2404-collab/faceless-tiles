@@ -44,6 +44,12 @@
   .pillar { background: var(--card); border-radius: 10px; padding: 20px; border-left: 3px solid var(--accent); }
   .pillar b { display: block; margin-bottom: 6px; }
   .pillar span { font-size: 13px; color: var(--muted); }
+  .social-proof { text-align: center; }
+  .social-proof p { color: #d9cbb8; max-width: 480px; margin: 0 auto; }
+  .ig-link {
+    display: inline-block; margin-top: 20px; color: var(--accent); font-weight: 700;
+    text-decoration: none; border: 1px solid var(--accent); padding: 12px 28px; border-radius: 999px;
+  }
   .price-box {
     background: var(--card); border-radius: 14px; padding: 36px; text-align: center;
     border: 1px solid #3a2c1e;
@@ -52,6 +58,15 @@
   .price-box .now { font-size: 44px; font-weight: 800; color: var(--accent); margin: 6px 0 4px; }
   .price-box .desc { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
   .badges { display: flex; justify-content: center; gap: 24px; margin-top: 24px; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+  .faq details {
+    background: var(--card); border-radius: 10px; padding: 18px 22px; margin-bottom: 12px;
+    border: 1px solid #3a2c1e;
+  }
+  .faq summary { cursor: pointer; font-weight: 700; list-style: none; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; float: right; color: var(--accent); font-weight: 800; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { color: #d9cbb8; margin-top: 12px; font-size: 14px; }
   footer { padding: 40px 0 60px; text-align: center; font-size: 12px; color: var(--muted); }
   footer a { color: var(--accent); text-decoration: none; }
   .instagram { text-align: center; padding: 8px 0 8px; color: var(--muted); font-size: 14px; }
@@ -115,6 +130,13 @@
   </div>
 </section>
 
+<section class="wrap social-proof">
+  <h2>Die Rezepte, die du aus dem Feed kennst</h2>
+  <p>Jeden Tag neue Food-Fakten und Rezept-Ideen auf Instagram, YouTube und TikTok —
+  schau selbst vorbei und überzeug dich, bevor du kaufst.</p>
+  <a class="ig-link" href="https://www.instagram.com/cook.vision/" target="_blank" rel="noopener">📷 @cook.vision auf Instagram</a>
+</section>
+
 <section class="wrap">
   <div class="price-box">
     <div class="old">29,90 €</div>
@@ -125,8 +147,38 @@
       <span>🔒 Sichere Zahlung</span>
       <span>⚡ Sofortiger Download</span>
       <span>📄 114 Seiten</span>
+      <span>🔄 14 Tage Geld-zurück-Garantie</span>
     </div>
   </div>
+</section>
+
+<section class="wrap faq">
+  <h2>Häufige Fragen</h2>
+  <details>
+    <summary>Brauche ich Kocherfahrung?</summary>
+    <p>Nein. Alle 100 Rezepte sind bewusst anfängertauglich geschrieben — klare, nummerierte
+    Schritte, keine exotischen Zutaten und keine Profi-Ausrüstung. Nur Pfanne, Ofen und Zeit.</p>
+  </details>
+  <details>
+    <summary>Wie bekomme ich das Buch nach dem Kauf?</summary>
+    <p>Direkt nach der Zahlung bekommst du den Sofort-Download-Link von Digistore24 —
+    kein Warten, kein Versand.</p>
+  </details>
+  <details>
+    <summary>Auf welchen Geräten kann ich es lesen?</summary>
+    <p>Das Buch ist ein PDF mit 114 Seiten — lesbar auf Handy, Tablet, PC oder ausgedruckt,
+    ganz wie du magst.</p>
+  </details>
+  <details>
+    <summary>Ist die Zahlung sicher?</summary>
+    <p>Ja. Die Zahlung läuft komplett über Digistore24, einen der größten deutschen
+    Anbieter für digitale Produkte, inklusive Käuferschutz.</p>
+  </details>
+  <details>
+    <summary>Was, wenn mir das Buch nicht gefällt?</summary>
+    <p>Du hast 14 Tage Geld-zurück-Garantie — meldest du dich in dieser Zeit, bekommst du
+    dein Geld ohne Wenn und Aber zurück.</p>
+  </details>
 </section>
 
 <div class="instagram">Von den Machern von <b>@cook.vision</b> auf Instagram</div>
