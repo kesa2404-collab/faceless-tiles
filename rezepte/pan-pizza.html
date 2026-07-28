@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pan-Pizza mit dickem Käserand — Rezept von cook.vision</title>
+<meta name="description" content="Der Pizzarand, in dem der Käse WOHNT — gebacken in einer ganz normalen Pfanne.">
+<style>
+  :root {
+    --bg-top: #1e150e; --bg-bottom: #0d0906; --accent: #eb9632;
+    --text: #f6f0e7; --muted: #a08c76; --card: #241708; --line: #3a2c1e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    background-attachment: fixed; line-height: 1.6;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+  header.hero { padding: 44px 0 28px; text-align: center; }
+  .kicker { letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-size: 12px; margin-bottom: 12px; }
+  h1 { font-size: clamp(28px, 6.5vw, 40px); line-height: 1.15; }
+  .subtitle { font-size: 17px; color: #d9cbb8; margin: 16px auto 0; max-width: 500px; }
+  section { padding: 32px 0; border-top: 1px solid #2e2114; }
+  h2 { font-size: 22px; margin-bottom: 14px; }
+  h2 .accent { color: var(--accent); }
+  .lede { color: #d9cbb8; margin-bottom: 22px; }
+
+  /* Eckdaten eines Rezepts */
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 4px; }
+  .meta span { background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+               padding: 7px 15px; font-size: 13px; color: #d9cbb8; }
+  .meta b { color: var(--accent); font-weight: 600; }
+  .hook { font-size: 18px; color: #d9cbb8; font-style: italic; margin-top: 18px; }
+
+  ul.zutaten { list-style: none; margin-top: 4px; }
+  ul.zutaten li { padding: 10px 0 10px 22px; border-bottom: 1px solid var(--line);
+                  position: relative; color: #d9cbb8; font-size: 15px; }
+  ul.zutaten li::before { content: "·"; position: absolute; left: 4px; color: var(--accent);
+                          font-size: 22px; line-height: 1.1; }
+  ol.schritte { list-style: none; counter-reset: s; }
+  ol.schritte li { counter-increment: s; padding: 14px 0 14px 46px; position: relative;
+                   color: #d9cbb8; font-size: 15px; border-bottom: 1px solid var(--line); }
+  ol.schritte li::before { content: counter(s); position: absolute; left: 0; top: 13px;
+      width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #1a1108;
+      font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+  .tipp { margin-top: 22px; background: var(--card); border-left: 3px solid var(--accent);
+          border-radius: 8px; padding: 16px 18px; font-size: 15px; color: #d9cbb8; }
+  .tipp b { color: var(--text); }
+
+  /* Buch-Hinweis */
+  .buch { margin-top: 34px; background: var(--card); border: 1px solid var(--accent);
+          border-radius: 14px; padding: 26px 22px; text-align: center; }
+  .buch .name { font-size: 24px; letter-spacing: 2px; font-weight: 700; }
+  .buch .name .accent { color: var(--accent); }
+  .buch .unter { font-size: 14px; color: var(--muted); margin-top: 6px; }
+  .buch p { font-size: 15px; color: #d9cbb8; margin-top: 14px; }
+  .btn { display: inline-block; margin-top: 18px; background: var(--accent); color: #1a1108;
+         font-weight: 700; text-decoration: none; padding: 13px 30px; border-radius: 999px; font-size: 15px; }
+
+  /* Uebersicht */
+  .liste { display: grid; gap: 12px; }
+  .karte { display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line);
+           border-radius: 12px; padding: 18px 20px; }
+  .karte h3 { font-size: 18px; color: var(--text); margin-bottom: 4px; }
+  .karte .zeit { font-size: 13px; color: var(--muted); }
+  .karte .hook2 { font-size: 14px; color: #d9cbb8; margin-top: 8px; }
+
+  footer { padding: 40px 0 64px; text-align: center; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+  a { color: var(--accent); }
+  .back { display: inline-block; margin-top: 30px; color: var(--muted); text-decoration: none; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">Kostenloses Rezept · cook.vision</div>
+    <h1>Pan-Pizza mit dickem Käserand</h1>
+  </header>
+
+  <section>
+    <p class="hook">Der Pizzarand, in dem der Käse WOHNT — gebacken in einer ganz normalen Pfanne.</p>
+    <div class="meta">
+      <span>Zeit <b>30 Minuten + 1 Stunde Teigruhe</b></span>
+      <span>Portionen <b>1 Pfannenpizza (2 Personen)</b></span>
+      <span>Aufwand <b>mittel</b></span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Das <span class="accent">brauchst</span> du</h2>
+    <ul class="zutaten">
+      <li>300 g Pizzateig (fertig oder selbst gemacht)</li>
+      <li>100 g geriebener Mozzarella + 60 g extra für den Rand</li>
+      <li>100 ml Pizzasauce (passierte Tomaten, Salz, Oregano, 1 EL Olivenöl)</li>
+      <li>Belag nach Wahl (Salami, Champignons ...)</li>
+      <li>2 EL Olivenöl für die Pfanne</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>So <span class="accent">geht's</span></h2>
+    <ol class="schritte">
+      <li>Ofenfeste Pfanne großzügig ölen, Teig hineindrücken und dabei einen 2 cm hohen Rand hochziehen.</li>
+      <li>Den Extra-Käse als Wurst in den Rand einrollen und festdrücken — der Käserand.</li>
+      <li>Sauce, Käse und Belag verteilen, Teig 1 Stunde in der Pfanne gehen lassen.</li>
+      <li>Pfanne 3 Minuten auf dem Herd bei hoher Hitze starten — das gibt den knusprigen Boden.</li>
+      <li>Dann bei 240 °C ca. 12-15 Minuten in den Ofen, bis der Rand tief goldbraun ist.</li>
+    </ol>
+    <div class="tipp"><b>Tipp:</b> Der Herd-Start ist der Pfannenpizza-Trick: Boden knusprig wie frittiert, Rand fluffig wie beim Lieferdienst — nur mit mehr Käse.</div>
+
+    <div class="buch">
+      <div class="name"><span class="accent">VIRAL</span> FOOD</div>
+      <div class="unter">100 Fast-Food-Klassiker, die du besser selbst machst</div>
+      <p>Dieses Rezept ist eins von hundert. Die anderen 99 stehen im Kochbuch — alle im selben Aufbau, alle zum Nachkochen an einem normalen Abend.</p>
+      <a class="btn" href="https://kesa2404-collab.github.io/faceless-tiles/book/" target="_blank" rel="noopener">Zum Kochbuch</a>
+    </div>
+
+    <a class="back" href="index.html">&larr; alle kostenlosen Rezepte</a>
+  </section>
+
+  <footer>
+    <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+</div>
+</body>
+</html>
