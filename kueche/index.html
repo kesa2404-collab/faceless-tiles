@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meine Küchen-Empfehlungen — cook.vision</title>
+<meta name="description" content="Die Sachen, die bei mir wirklich täglich im Einsatz sind. Nichts davon ist teuer, nichts davon liegt in der Schublade.">
+<style>
+  :root {
+    --bg-top: #1e150e; --bg-bottom: #0d0906; --accent: #eb9632;
+    --text: #f6f0e7; --muted: #a08c76; --card: #241708; --line: #3a2c1e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    background-attachment: fixed;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .adlabel {
+    background: #2e2114; border-bottom: 1px solid var(--line);
+    font-size: 13px; color: #d9cbb8; padding: 12px 20px; text-align: center;
+  }
+  .adlabel b { color: var(--accent); letter-spacing: 1px; }
+  header.hero { padding: 44px 0 28px; text-align: center; }
+  .kicker { letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-size: 12px; margin-bottom: 12px; }
+  h1 { font-size: clamp(30px, 7vw, 44px); line-height: 1.12; }
+  .subtitle { font-size: 17px; color: #d9cbb8; margin: 16px auto 0; max-width: 520px; }
+  section { padding: 36px 0; border-top: 1px solid #2e2114; }
+  h2 { font-size: 24px; margin-bottom: 8px; }
+  h2 .accent { color: var(--accent); }
+  .lede { color: #d9cbb8; margin-bottom: 24px; }
+
+  /* Sprungmarken */
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 26px; }
+  .jump a { font-size: 13px; text-decoration: none; color: #d9cbb8; border: 1px solid var(--line);
+            border-radius: 999px; padding: 7px 15px; }
+
+  /* Temperaturtabelle */
+  .temps { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .temps th { text-align: left; font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+              color: var(--muted); padding: 0 0 10px; font-weight: 600; }
+  .temps td { padding: 12px 0; border-top: 1px solid var(--line); vertical-align: top; }
+  .temps td.t { color: var(--accent); font-weight: 700; white-space: nowrap; padding-right: 16px; width: 1%; }
+  .temps td .h { color: var(--muted); font-size: 13px; }
+  .foot { margin-top: 18px; font-size: 13px; color: var(--muted); }
+
+  /* Produktkarten */
+  .prod { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+          padding: 22px; margin-bottom: 14px; }
+  .prod.hero-prod { border-color: var(--accent); }
+  .prod .tag { display: inline-block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+               color: #1a1108; background: var(--accent); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
+  .prod h3 { font-size: 19px; margin-bottom: 4px; }
+  .prod .preis { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .prod p { color: #d9cbb8; font-size: 15px; }
+  .prod .achten { margin-top: 10px; font-size: 13px; color: var(--muted); }
+  .prod .achten b { color: #d9cbb8; font-weight: 600; }
+  .btn { display: inline-block; margin-top: 16px; background: var(--accent); color: #1a1108;
+         font-weight: 700; text-decoration: none; padding: 12px 26px; border-radius: 999px; font-size: 15px; }
+
+  footer { padding: 40px 0 64px; text-align: center; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+  a { color: var(--accent); }
+  .back { display: inline-block; margin-top: 36px; color: var(--muted); text-decoration: none; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">@cook.vision</div>
+    <h1>Meine Küchen-Empfehlungen</h1>
+    <p class="subtitle">Die Sachen, die bei mir wirklich täglich im Einsatz sind. Nichts davon ist teuer, nichts davon liegt in der Schublade.</p>
+    <nav class="jump">
+      <a href="#temperaturen">Kerntemperaturen</a>
+      <a href="#messen">Messen und Wiegen</a>
+      <a href="#schneiden">Schneiden und Schälen</a>
+      <a href="#kochen">Kochen und Braten</a>
+      <a href="#aufbewahren">Aufbewahren und frisch halten</a>
+      <a href="#backen">Backen</a>
+    </nav>
+  </header>
+
+  <section id="temperaturen">
+    <h2>Kerntemperaturen — die Tabelle zum Abspeichern</h2>
+    <p class="lede">Der häufigste Grund für trockenes Fleisch ist nicht die falsche Pfanne, sondern zu langes Garen. Gemessen wird in der dicksten Stelle, ohne Knochenkontakt.</p>
+    <table class="temps">
+      <tr><th>Kern</th><th>Was</th></tr>
+      <tr><td class="t">70 °C</td><td>Hähnchen, Pute, Geflügel<div class="h">2 Minuten halten — hier geht Sicherheit vor Garpunkt</div></td></tr>
+      <tr><td class="t">70 °C</td><td>Hackfleisch, alle Sorten<div class="h">2 Minuten halten, durchgegart</div></td></tr>
+      <tr><td class="t">65–70 °C</td><td>Schweinebraten, Schnitzel<div class="h">saftig, nicht mehr rosa</div></td></tr>
+      <tr><td class="t">52 °C</td><td>Rindersteak, rare<div class="h">innen kühl und rot</div></td></tr>
+      <tr><td class="t">55 °C</td><td>Rindersteak, medium rare<div class="h">der Punkt, den die meisten meinen</div></td></tr>
+      <tr><td class="t">58 °C</td><td>Rindersteak, medium<div class="h">durchgehend rosa</div></td></tr>
+      <tr><td class="t">55 °C</td><td>Roastbeef am Stück<div class="h">danach 10 Minuten ruhen lassen</div></td></tr>
+      <tr><td class="t">55–60 °C</td><td>Lammkeule, Lammrücken<div class="h">rosa</div></td></tr>
+      <tr><td class="t">62–65 °C</td><td>Entenbrust<div class="h">Haut vorher knusprig braten</div></td></tr>
+      <tr><td class="t">60 °C</td><td>Fischfilet (Lachs, Kabeljau)<div class="h">glasig statt trocken</div></td></tr>
+    </table>
+    <p class="foot">Bei Geflügel und Hackfleisch orientieren sich die Werte an der Empfehlung des Bundesinstituts für Risikobewertung. Die Temperatur muss dort zwei Minuten gehalten werden — einmal kurz antippen reicht nicht.</p>
+  </section>
+
+  <section id="messen">
+    <h2>Messen und Wiegen</h2>
+    <p class="lede">Der Bereich, in dem Küchen am häufigsten raten — und am leichtesten aufhören könnten.</p>
+    <div class="prod hero-prod" id="thermometer">
+      <span class="tag">Meine Nummer eins</span>
+      <h3>Digitales Einstich-Thermometer</h3>
+      <div class="preis">ca. 15 €</div>
+      <p>Das eine Gerät, das aus der Tabelle oben erst etwas Praktisches macht. Vorher habe ich Fleisch nach Gefühl gegart und regelmäßig danebengelegen — meistens zu lange.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Messzeit unter 4 Sekunden, klappbare Sonde, Anzeige in 0,1-Grad-Schritten.</div>
+    </div>
+    <div class="prod" id="kuechenwaage">
+      
+      <h3>Digitale Küchenwaage</h3>
+      <div class="preis">ca. 15 €</div>
+      <p>Ein Rezept mit Tassen und Esslöffeln ist ein Rezept, das jedes Mal anders schmeckt. Mehl lässt sich um bis zu ein Drittel unterschiedlich dicht in dieselbe Tasse füllen.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Tara-Taste, 1-Gramm-Schritte, mindestens 5 kg Tragkraft.</div>
+    </div>
+    <div class="prod" id="ofenthermometer">
+      
+      <h3>Analoges Ofenthermometer</h3>
+      <div class="preis">ca. 10 €</div>
+      <p>Die wenigsten Backöfen halten, was ihr Drehknopf verspricht — Abweichungen von 20 bis 30 Grad sind normal. Das erklärt erstaunlich viele misslungene Kuchen.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Zum Einhängen und Stellen, Skala bis mindestens 300 °C.</div>
+    </div>
+    <div class="prod" id="messbecher">
+      
+      <h3>Messlöffel-Set aus Edelstahl</h3>
+      <div class="preis">ca. 10 €</div>
+      <p>Für alles unter zehn Gramm ist die Waage zu ungenau. Backpulver, Salz, Hefe, Gewürze — hier entscheidet ein halber Teelöffel über das Ergebnis.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Edelstahl statt Kunststoff, schmale Form, damit sie in Gewürzgläser passen.</div>
+    </div>
+    <div class="prod" id="timer">
+      
+      <h3>Küchentimer mit Magnet</h3>
+      <div class="preis">ca. 10 €</div>
+      <p>Das Handy als Timer funktioniert genau so lange, bis eine Nachricht hereinkommt. Danach ist der Reis Brei.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Magnetrückseite, laut genug für ein anderes Zimmer, drei Kanäle sind angenehm.</div>
+    </div>
+  </section>
+
+  <section id="schneiden">
+    <h2>Schneiden und Schälen</h2>
+    <p class="lede">Vier Sachen, die zusammen weniger kosten als ein einzelnes Markenmesser.</p>
+    <div class="prod" id="messerschaerfer">
+      
+      <h3>Messerschärfer mit zwei Stufen</h3>
+      <div class="preis">ca. 20 €</div>
+      <p>Ein stumpfes Messer rutscht ab, statt zu schneiden. Deshalb passieren die meisten Schnittverletzungen in der Küche mit stumpfen und nicht mit scharfen Messern.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Grobe Stufe zum Schärfen, feine zum Abziehen, rutschfester Stand.</div>
+    </div>
+    <div class="prod" id="sparschaeler">
+      
+      <h3>Y-Sparschäler</h3>
+      <div class="preis">ca. 10 €</div>
+      <p>Der klassische Längsschäler war nie das bessere Werkzeug, er war nur zuerst da. Mit dem Y-Griff zieht man quer über die Kartoffel und ist etwa doppelt so schnell.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Pendelnde Klinge aus Edelstahl, kein starrer Kopf.</div>
+    </div>
+    <div class="prod" id="reibe">
+      
+      <h3>Feine Zesten-Reibe</h3>
+      <div class="preis">ca. 18 €</div>
+      <p>Für Parmesan, Zitronenschale, Muskat und Knoblauch. Grobe Vierkantreiben zerdrücken mehr, als sie reiben — der Unterschied schmeckt man sofort.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Geätzte statt gestanzte Klinge. Die bleibt jahrelang scharf.</div>
+    </div>
+    <div class="prod" id="schneidebrett">
+      
+      <h3>Schneidebrett aus Holz</h3>
+      <div class="preis">ca. 25 €</div>
+      <p>Holz ist entgegen dem Ruf nicht unhygienischer als Kunststoff — die Gerbstoffe wirken der Keimbildung entgegen, und es schont die Messerschneide deutlich mehr.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Stirnholz wäre ideal, ist aber teurer. Mindestens 2 cm dick, sonst wirft es sich.</div>
+    </div>
+    <div class="prod" id="kuechenschere">
+      
+      <h3>Zerlegbare Küchenschere</h3>
+      <div class="preis">ca. 15 €</div>
+      <p>Für Kräuter, Geflügel, Verpackungen und Pizza schneller als jedes Messer. Zerlegbar deshalb, weil eine Schere, die man nicht richtig sauber bekommt, in der Küche nichts verloren hat.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Klingen zum Auseinandernehmen, spülmaschinenfest.</div>
+    </div>
+    <div class="prod" id="mandoline">
+      
+      <h3>Gemüsehobel mit Fingerschutz</h3>
+      <div class="preis">ca. 20 €</div>
+      <p>Gleichmäßig dünne Scheiben garen gleichmäßig — genau daran scheitern Gratins und Chips meistens. Den Fingerschutz benutzt man wirklich jedes Mal.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Verstellbare Dicke, unbedingt mit Restehalter.</div>
+    </div>
+  </section>
+
+  <section id="kochen">
+    <h2>Kochen und Braten</h2>
+    <p class="lede">Kleinkram, der jeden Tag Sekunden spart und dadurch irgendwann Stunden.</p>
+    <div class="prod" id="oelsprueher">
+      
+      <h3>Ölsprüher</h3>
+      <div class="preis">ca. 12 €</div>
+      <p>Ein Esslöffel Öl aus der Flasche sind schnell drei. Mit dem Sprüher liegt ein hauchdünner Film in der Pfanne statt einer Lache — das ändert Bratergebnis und Kalorien gleichermaßen.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Glasbehälter statt Kunststoff, Pumpe ohne Treibgas.</div>
+    </div>
+    <div class="prod" id="spinne">
+      
+      <h3>Schaumkelle (Spinne)</h3>
+      <div class="preis">ca. 12 €</div>
+      <p>Zum Herausholen von Nudeln, Klößen, Frittiertem und blanchiertem Gemüse. Das Wasser bleibt im Topf, was beim Abschmecken der Sauce plötzlich sehr praktisch ist.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Weite Drahtkelle, langer Griff, Edelstahl.</div>
+    </div>
+    <div class="prod" id="silikonwender">
+      
+      <h3>Silikon-Pfannenwender</h3>
+      <div class="preis">ca. 10 €</div>
+      <p>Hitzebeständig bis über 200 °C und schont beschichtete Pfannen. Metallwender sind der häufigste Grund, warum eine Beschichtung nach einem Jahr hinüber ist.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Einteilig gegossen — bei geklebten Modellen sammelt sich Fett in der Fuge.</div>
+    </div>
+    <div class="prod" id="knoblauchpresse">
+      
+      <h3>Knoblauchpresse</h3>
+      <div class="preis">ca. 15 €</div>
+      <p>Gepresster Knoblauch schmeckt schärfer als geschnittener — beim Zerdrücken werden mehr Zellen aufgebrochen und mehr Allicin freigesetzt. Je nach Gericht ist das genau das, was man will.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Vollmetall, Zehe muss ungeschält hineinpassen.</div>
+    </div>
+    <div class="prod" id="spritzschutz">
+      
+      <h3>Spritzschutz-Sieb</h3>
+      <div class="preis">ca. 12 €</div>
+      <p>Anders als ein Deckel lässt es Dampf entweichen — das Fleisch brät weiter, statt zu dünsten, und die Herdplatte bleibt trotzdem sauber.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Feines Edelstahlgeflecht, Durchmesser passend zur größten Pfanne.</div>
+    </div>
+    <div class="prod" id="kartoffelstampfer">
+      
+      <h3>Kartoffelpresse</h3>
+      <div class="preis">ca. 20 €</div>
+      <p>Der Pürierstab macht aus Kartoffeln Kleister, weil er die Stärkezellen zerschlägt. Die Presse nicht — das ist der ganze Unterschied zwischen Püree und Tapetenkleister.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Stabile Hebel, Einsätze in zwei Lochgrößen.</div>
+    </div>
+    <div class="prod" id="salatschleuder">
+      
+      <h3>Salatschleuder</h3>
+      <div class="preis">ca. 20 €</div>
+      <p>Dressing haftet nicht auf nassen Blättern, es läuft ab und sammelt sich unten in der Schüssel. Deshalb schmeckt Salat zu Hause oft fade und im Restaurant nicht.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Bremse am Deckel, Schüssel als Servierschale nutzbar.</div>
+    </div>
+  </section>
+
+  <section id="aufbewahren">
+    <h2>Aufbewahren und frisch halten</h2>
+    <p class="lede">Der unspektakulärste Weg, Geld zu sparen: weniger wegwerfen.</p>
+    <div class="prod" id="vorratsdosen">
+      
+      <h3>Vorratsdosen-Set</h3>
+      <div class="preis">ca. 25 €</div>
+      <p>Mehl und Nudeln in der geöffneten Papiertüte ziehen Feuchtigkeit und Gerüche aus dem Schrank. In dichten Dosen halten sie deutlich länger und locken keine Lebensmittelmotten an.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Umlaufende Dichtung, stapelbar, spülmaschinenfest.</div>
+    </div>
+    <div class="prod" id="kraeuterbox">
+      
+      <h3>Frischhaltebox für Kräuter und Salat</h3>
+      <div class="preis">ca. 15 €</div>
+      <p>Basilikum wird im Kühlschrank schwarz, weil ihm dort schlicht zu kalt ist. Für alles andere gilt: In einer Box mit Feuchtigkeitsregulierung halten Kräuter statt drei Tagen gut eine Woche.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Regulierbare Lüftung, herausnehmbares Sieb gegen Staunässe.</div>
+    </div>
+    <div class="prod" id="einmachglaeser">
+      
+      <h3>Einmachgläser mit Bügelverschluss</h3>
+      <div class="preis">ca. 20 €</div>
+      <p>Für Eingelegtes, Fonds, Granola und Reste. Glas nimmt weder Geruch noch Farbe an — Tomatensauce in Kunststoffdosen ist eine Einbahnstraße.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Ersatzgummis müssen einzeln nachkaufbar sein.</div>
+    </div>
+    <div class="prod" id="vakuumbeutel">
+      
+      <h3>Wiederverwendbare Vakuumbeutel</h3>
+      <div class="preis">ca. 18 €</div>
+      <p>Gefrierbrand entsteht durch Luft am Lebensmittel, nicht durch die Kälte. Weniger Luft im Beutel heißt Monate statt Wochen Haltbarkeit.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Doppelter Zipper, für Sous-vide geeignet, ohne BPA.</div>
+    </div>
+    <div class="prod" id="trichter">
+      
+      <h3>Trichter-Set</h3>
+      <div class="preis">ca. 10 €</div>
+      <p>Klingt nach nichts, bis man das erste Mal Fond in Gläser umfüllt. Danach fragt man sich, warum man es jahrelang mit dem Schöpflöffel und einem Lappen gemacht hat.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Drei Größen, Edelstahl oder Silikon, faltbar spart Platz.</div>
+    </div>
+  </section>
+
+  <section id="backen">
+    <h2>Backen</h2>
+    <p class="lede">Backen ist Chemie. Chemie verzeiht keine Schätzungen.</p>
+    <div class="prod" id="backmatte">
+      
+      <h3>Silikon-Backmatte</h3>
+      <div class="preis">ca. 12 €</div>
+      <p>Ersetzt Backpapier dauerhaft. Nach etwa dreißig Blechen hat sie sich bezahlt gemacht, und Plätzchen lösen sich zuverlässiger als von Papier.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Bis 230 °C hitzebeständig. Vorher am eigenen Blech nachmessen.</div>
+    </div>
+    <div class="prod" id="teigschaber">
+      
+      <h3>Teigschaber aus Silikon</h3>
+      <div class="preis">ca. 10 €</div>
+      <p>Holt den Teig wirklich aus der Schüssel. Was am Rand kleben bleibt, sind bei einem Kuchen schnell zwei Stücke.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Einteilig gegossen, flexibles Blatt mit fester Kante.</div>
+    </div>
+    <div class="prod" id="ruehrschuessel">
+      
+      <h3>Rührschüssel-Set aus Edelstahl</h3>
+      <div class="preis">ca. 22 €</div>
+      <p>Eiweiß wird in Edelstahl oder Glas fester als in Kunststoff — Kunststoff hält winzige Fettreste zurück, und Fett verhindert, dass Eischnee steif wird.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Ineinander stapelbar, mindestens eine Schüssel mit 4 Litern.</div>
+    </div>
+    <div class="prod" id="ausrollstab">
+      
+      <h3>Teigrolle mit Abstandsringen</h3>
+      <div class="preis">ca. 18 €</div>
+      <p>Gleichmäßig dicker Teig backt gleichmäßig durch. Mit den Ringen wird jedes Plätzchen gleich dick, ohne dass man es üben muss.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Vier Ringe von 2 bis 10 mm, durchgehende Achse.</div>
+    </div>
+    <div class="prod" id="spritzbeutel">
+      
+      <h3>Spritzbeutel mit Tüllen-Set</h3>
+      <div class="preis">ca. 15 €</div>
+      <p>Nicht nur für Torten — auch zum Füllen von Teigtaschen, Portionieren von Muffinteig und für Kartoffelpüree als Beilage.</p>
+      <div class="achten"><b>Worauf ich achte:</b> Wiederverwendbare Beutel statt Einweg, Adapter zum Tüllenwechsel.</div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+</div>
+</body>
+</html>
