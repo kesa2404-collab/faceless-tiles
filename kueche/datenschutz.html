@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutz — cook.vision</title>
+<meta name="description" content="Datenschutzerklärung der Empfehlungsseite von cook.vision">
+<style>
+  :root {
+    --bg-top: #1e150e; --bg-bottom: #0d0906; --accent: #eb9632;
+    --text: #f6f0e7; --muted: #a08c76; --card: #241708; --line: #3a2c1e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    background-attachment: fixed;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .adlabel {
+    background: #2e2114; border-bottom: 1px solid var(--line);
+    font-size: 13px; color: #d9cbb8; padding: 12px 20px; text-align: center;
+  }
+  .adlabel b { color: var(--accent); letter-spacing: 1px; }
+  header.hero { padding: 44px 0 28px; text-align: center; }
+  .kicker { letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-size: 12px; margin-bottom: 12px; }
+  h1 { font-size: clamp(30px, 7vw, 44px); line-height: 1.12; }
+  .subtitle { font-size: 17px; color: #d9cbb8; margin: 16px auto 0; max-width: 520px; }
+  section { padding: 36px 0; border-top: 1px solid #2e2114; }
+  h2 { font-size: 24px; margin-bottom: 8px; }
+  h2 .accent { color: var(--accent); }
+  .lede { color: #d9cbb8; margin-bottom: 24px; }
+
+  /* Sprungmarken */
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 26px; }
+  .jump a { font-size: 13px; text-decoration: none; color: #d9cbb8; border: 1px solid var(--line);
+            border-radius: 999px; padding: 7px 15px; }
+
+  /* Temperaturtabelle */
+  .temps { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .temps th { text-align: left; font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+              color: var(--muted); padding: 0 0 10px; font-weight: 600; }
+  .temps td { padding: 12px 0; border-top: 1px solid var(--line); vertical-align: top; }
+  .temps td.t { color: var(--accent); font-weight: 700; white-space: nowrap; padding-right: 16px; width: 1%; }
+  .temps td .h { color: var(--muted); font-size: 13px; }
+  .foot { margin-top: 18px; font-size: 13px; color: var(--muted); }
+
+  /* Produktkarten */
+  .prod { background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+          padding: 22px; margin-bottom: 14px; }
+  .prod.hero-prod { border-color: var(--accent); }
+  .prod .tag { display: inline-block; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+               color: #1a1108; background: var(--accent); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
+  .prod h3 { font-size: 19px; margin-bottom: 4px; }
+  .prod .preis { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .prod p { color: #d9cbb8; font-size: 15px; }
+  .prod .achten { margin-top: 10px; font-size: 13px; color: var(--muted); }
+  .prod .achten b { color: #d9cbb8; font-weight: 600; }
+  .btn { display: inline-block; margin-top: 16px; background: var(--accent); color: #1a1108;
+         font-weight: 700; text-decoration: none; padding: 12px 26px; border-radius: 999px; font-size: 15px; }
+
+  footer { padding: 40px 0 64px; text-align: center; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+  a { color: var(--accent); }
+  .back { display: inline-block; margin-top: 36px; color: var(--muted); text-decoration: none; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="kicker">cook.vision</div>
+    <h1>Datenschutz</h1>
+  </header>
+  <section>
+    <h2>Verantwortlicher</h2>
+    <p class="lede">Kenan Sahin, Weideweg 2, 35329 Gemünden,
+      <a href="mailto:cookvision@gmx.net">cookvision@gmx.net</a></p>
+
+    <h2>Was diese Seite tut</h2>
+    <p class="lede">Diese Seite setzt keine Cookies, bindet keine Schriften oder
+      Skripte von fremden Servern ein und wertet dein Verhalten nicht aus.
+      Es gibt kein Kontaktformular und keine Anmeldung.</p>
+
+    <h2>Hosting</h2>
+    <p class="lede">Die Seite liegt bei GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr.
+      Street, San Francisco, CA 94107, USA). Beim Abruf verarbeitet GitHub
+      technisch notwendige Zugriffsdaten, darunter deine IP-Adresse.
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO — das berechtigte Interesse
+      an einer technisch fehlerfreien Auslieferung.</p>
+
+    <h2>Weiterleitung zu Amazon</h2>
+    <p class="lede">Klickst du auf einen Produktlink, verlässt du diese Seite und
+      wirst zu Amazon weitergeleitet. Ab diesem Moment gilt die Datenschutzerklärung
+      von Amazon. Amazon erkennt am Link, dass du von hier kommst, und speichert
+      das üblicherweise für 24 Stunden, um mir eine Provision zuordnen zu können.
+      Personenbezogene Daten über dich erhalte ich dabei nicht — ich sehe nur die
+      Anzahl der Verkäufe, nicht wer gekauft hat.</p>
+
+    <h2>Deine Rechte</h2>
+    <p class="lede">Du hast das Recht auf Auskunft, Berichtigung, Löschung,
+      Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie
+      das Recht, dich bei einer Aufsichtsbehörde zu beschweren.</p>
+
+    <a class="back" href="index.html">&larr; zurück zu den Empfehlungen</a>
+  </section>
+</div>
+</body>
+</html>
