@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COOK VISION — alle Links</title>
+<meta name="description" content="Alle Kochbücher und Empfehlungen von @cook.vision auf einen Blick.">
+<style>
+  :root {
+    --bg-top: #1e150e; --bg-bottom: #0d0906; --accent: #eb9632;
+    --text: #f6f0e7; --muted: #a08c76; --card: #241708; --line: #3a2c1e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+    background-attachment: fixed;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 520px; margin: 0 auto; padding: 0 20px; }
+  header.hero { padding: 52px 0 32px; text-align: center; }
+  .kicker { letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-size: 12px; margin-bottom: 12px; }
+  h1 { font-size: clamp(32px, 9vw, 46px); letter-spacing: 3px; line-height: 1.05; }
+  h1 .accent { color: var(--accent); }
+  .subtitle { font-size: 16px; color: #d9cbb8; margin: 16px auto 0; max-width: 420px; }
+  .cards { display: flex; flex-direction: column; gap: 14px; padding-bottom: 8px; }
+  a.card {
+    display: block; background: var(--card); border: 1px solid var(--line);
+    border-left: 3px solid var(--accent); border-radius: 12px;
+    padding: 20px 22px; text-decoration: none; color: inherit;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  a.card:hover, a.card:focus-visible { border-color: var(--accent); transform: translateY(-2px); }
+  .card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .card-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+  .card-price { font-size: 14px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .card h2 { font-size: 21px; letter-spacing: 1px; margin: 6px 0 4px; }
+  .card p { font-size: 14px; color: var(--muted); }
+  .card .go { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--accent); }
+  .section-label {
+    text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); margin: 30px 0 14px;
+  }
+  .channels { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+  .channels a {
+    color: var(--accent); text-decoration: none; font-size: 14px; font-weight: 700;
+    border: 1px solid var(--accent); border-radius: 999px; padding: 9px 22px;
+  }
+  footer { padding: 40px 0 56px; text-align: center; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<header class="hero wrap">
+  <div class="kicker">@cook.vision</div>
+  <h1>COOK<br><span class="accent">VISION</span></h1>
+  <p class="subtitle">Alles, worauf ich in meinen Videos verweise — an einer Stelle.</p>
+</header>
+
+<main class="wrap">
+<div class="cards">
+  <a class="card" href="https://www.viral-food-buch.de/protein-power/">
+    <div class="card-top"><span class="card-label">Das neue Buch</span><span class="card-price">19,90 €</span></div>
+    <h2>PROTEIN POWER</h2>
+    <p>100 High-Protein-Rezepte</p>
+    <span class="go">Ansehen &rarr;</span>
+  </a>
+  <a class="card" href="https://www.viral-food-buch.de/book/">
+    <div class="card-top"><span class="card-label">Der Klassiker</span><span class="card-price">14,90 €</span></div>
+    <h2>VIRAL FOOD</h2>
+    <p>100 virale Fast-Food-Rezepte</p>
+    <span class="go">Ansehen &rarr;</span>
+  </a>
+  <a class="card" href="https://www.viral-food-buch.de/kueche/">
+    <div class="card-top"><span class="card-label">Extra</span><span class="card-price">Kostenlos</span></div>
+    <h2>Meine Küchen-Empfehlungen</h2>
+    <p>Die Sachen, die bei mir wirklich täglich im Einsatz sind</p>
+    <span class="go">Ansehen &rarr;</span>
+  </a>
+</div>
+<div class="section-label">Folge mir</div>
+<div class="channels"><a href="https://www.instagram.com/cook.vision/" target="_blank" rel="noopener">Instagram</a></div>
+</main>
+
+<footer>
+  <p>Bezahlung und Rechnungsstellung erfolgen über unseren Zahlungsdienstleister Digistore24.</p>
+  <p style="margin-top:8px"><a href="impressum.html">Impressum</a></p>
+</footer>
+</body>
+</html>
